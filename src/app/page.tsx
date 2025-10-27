@@ -9,6 +9,7 @@ import Testimonial from "./components/portfolio/Testimonial";
 import Contact from "./components/portfolio/Contact";
 import FAQ from "./components/portfolio/FAQ";
 import LandSwiper from "./components/landSwiper/LandSwiper";
+import CounterSection from "./components/portfolio/CounterSection";
 
 export default function Home() {
   return (
@@ -27,6 +28,9 @@ export default function Home() {
         <ContainerWrapper>
           <Process />
         </ContainerWrapper>
+        <ContainerWrapper>
+          <CounterSection />
+          </ContainerWrapper>
         <ContainerWrapper>
           <Testimonial />
         </ContainerWrapper>

@@ -112,7 +112,7 @@ export default function Testimonial() {
 
   return (
     <section ref={ref} className="relative h-[200vh]">
-      <div className="sticky top-0 flex h-[90vh] items-center justify-center overflow-hidden">
+      <div className="sticky top-0 flex h-[80vh] lg:h-[90vh] items-center justify-center overflow-hidden">
         {testimonialsWithTransforms.map((testimonial, index) => (
           <motion.div
             key={testimonial.id}
