@@ -8,7 +8,7 @@ interface HeadingProps {
   variant?: HeadingVariant;
   children?: React.ReactNode;
   className?: string;
-  icon?: string | JSX.Element;
+  icon?: string | React.ReactElement;
   heading?: React.ReactNode | string;
 }
 
