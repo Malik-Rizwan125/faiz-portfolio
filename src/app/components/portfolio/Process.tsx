@@ -19,7 +19,7 @@ export default function Process() {
   },
 ];
   return (
-    <section id="process" className="py-12">
+    <section id="process" className="">
       <div className="container">
         {/* Top: two YouTube embeds */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 lg:mb-20 w-full lg:w-2/3 m-auto">

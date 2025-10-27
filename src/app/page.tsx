@@ -8,19 +8,21 @@ import Process from "./components/portfolio/Process";
 import Testimonial from "./components/portfolio/Testimonial";
 import Contact from "./components/portfolio/Contact";
 import FAQ from "./components/portfolio/FAQ";
+import LandSwiper from "./components/landSwiper/LandSwiper";
 
 export default function Home() {
   return (
     <div className="font-sans min-h-screen">
-      <ContainerWrapper>
-        <Navbar />
-      </ContainerWrapper>
+     
       <main>
         <ContainerWrapper>
           <Hero />
         </ContainerWrapper>
         <ContainerWrapper>
           <Projects />
+        </ContainerWrapper>
+        <ContainerWrapper>
+          <LandSwiper />
         </ContainerWrapper>
         <ContainerWrapper>
           <Process />
@@ -35,7 +37,7 @@ export default function Home() {
           <FAQ />
         </ContainerWrapper>
       </main>
-      <Footer />
+   
 
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-12">
+    <section id="contact" className="">
       <div className="container">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-3 mb-3">

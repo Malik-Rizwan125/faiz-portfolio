@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const Projects: React.FC = () => {
   const projects = [
@@ -31,7 +32,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section className=" text-white py-20">
+    <section className=" text-white py-5">
       <div className="max-w-7xl mx-auto px-4 text-center">
         {/* Top label */}
         <p className="text-white text-sm mb-2">● Work</p>
@@ -77,20 +78,22 @@ const Projects: React.FC = () => {
 
           {/* Navigation Buttons */}
           <div className="absolute inset-y-0 left-0 flex items-center z-10">
-            <button className="prev-slide bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 mx-2 transition">
+            <button className="prev-slide bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 mx-2 transition w-10 h-10">
               ←
             </button>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center z-10">
-            <button className="next-slide bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 mx-2 transition">
+            <button className="next-slide bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 mx-2 transition w-10 h-10">
               →
             </button>
           </div>
         </Swiper>
          <div className="mt-12">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-base font-medium transition">
-            Explore More Edits
-          </button>
+          <Link href="/categories" className="inline-block">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-base font-medium transition">
+              Explore More Edits
+            </button>
+          </Link>
         </div>
       </div>
     </section>

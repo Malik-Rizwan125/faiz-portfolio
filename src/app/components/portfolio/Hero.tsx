@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-  <section className="min-h-screen flex flex-col items-center mt-[0px] lg:mt-[150px] justify-center  text-white text-center px-4">
+  <section className="min-h-screen flex flex-col items-center mt-[60px] lg:mt-[120px] justify-center  text-white text-center px-4">
       {/* Top badge */}
       <p className="text-sm text-orange-400 mb-4">
         ● 3 Spots Available
@@ -14,9 +14,7 @@ const Hero: React.FC = () => {
         Every Great Story{" "}
         <span className="inline-flex items-center">
           Deserves a Great Editor
-          <span className="ml-2 bg-orange-500 text-white text-3xl rounded-md px-2 pb-1">
-            ★
-          </span>
+         
         </span>
         .
       </h1>
