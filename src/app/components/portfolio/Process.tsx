@@ -21,31 +21,6 @@ export default function Process() {
   return (
     <section id="process" className="">
       <div className="container">
-        {/* Top: two YouTube embeds */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 lg:mb-20 w-full lg:w-2/3 m-auto">
-          <div className="w-full rounded-xl overflow-hidden bg-black">
-            <iframe
-              className="w-full h-64 md:h-56"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="YouTube video 1"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-
-          <div className="w-full rounded-xl overflow-hidden bg-black">
-            <iframe
-              className="w-full h-64 md:h-56"
-              src="https://www.youtube.com/embed/3JZ_D3ELwOQ"
-              title="YouTube video 2"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-
         {/* Bottom: image left, text steps right */}
         <div className="flex flex-col lg:flex-row gap-10 items-start ">
           <div className='w-full lg:w-1/2'>

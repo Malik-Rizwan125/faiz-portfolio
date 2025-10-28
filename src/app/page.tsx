@@ -10,6 +10,7 @@ import Contact from "./components/portfolio/Contact";
 import FAQ from "./components/portfolio/FAQ";
 import LandSwiper from "./components/landSwiper/LandSwiper";
 import CounterSection from "./components/portfolio/CounterSection";
+import LogoMarquee from "./components/portfolio/LogoMarquee";
 
 export default function Home() {
   return (
@@ -33,6 +34,9 @@ export default function Home() {
           </ContainerWrapper>
         <ContainerWrapper>
           <Testimonial />
+        </ContainerWrapper>
+        <ContainerWrapper>
+          <LogoMarquee />
         </ContainerWrapper>
         <ContainerWrapper>
           <Contact />

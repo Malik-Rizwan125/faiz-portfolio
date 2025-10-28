@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-  <section className="min-h-screen flex flex-col items-center mt-[60px] lg:mt-[120px] justify-center  text-white text-center px-4">
+  <section id="services" className="min-h-screen flex flex-col items-center mt-[60px] lg:mt-[120px] justify-center  text-white text-center px-4">
       {/* Top badge */}
       <p className="text-sm text-orange-400 mb-4">
         ● 3 Spots Available

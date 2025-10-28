@@ -33,12 +33,11 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="">
+    <section id="faqs" className="">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Column */}
           <div>
-            <h3 className="text-sm text-gray-300 mb-4">FAQ</h3>
             <h2 className="text-3xl font-semibold mb-6 text-white">
               Frequently asked questions about us
             </h2>
@@ -66,6 +65,7 @@ export default function FAQ() {
                   onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 >
                   <span className="font-medium text-white">{it.q}</span>
+                  <div>
                   <span
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-white transition-transform duration-300 bg-orange-500 ${
                       openIndex === idx ? "rotate-180" : "rotate-0"
@@ -73,6 +73,7 @@ export default function FAQ() {
                   >
                     {openIndex === idx ? "×" : "+"}
                   </span>
+                  </div>
                 </button>
 
                 {/* Animated Answer */}

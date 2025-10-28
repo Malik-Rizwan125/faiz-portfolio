@@ -12,7 +12,14 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+useEffect(() => {
+  if (isMobileMenuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+  return () => { document.body.style.overflow = "auto"; };
+}, [isMobileMenuOpen]);
   const scrollToSection = (sectionId: string) => {
     setIsMobileMenuOpen(false);
     const element = document.querySelector(sectionId);
@@ -27,7 +34,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-6 left-0 w-full z-50 flex justify-center transition-all duration-500 ${
+      className={`fixed top-0 md:top-6 left-0 w-full z-50 flex justify-center transition-all duration-500 ${
         isScrolled
           ? "bg-[linear-gradient(rgba(28,28,28,0.8)_-38%,rgba(0,0,0,0.8)_156%)] backdrop-blur-md"
           : "bg-transparent"
@@ -42,9 +49,7 @@ const Navbar: React.FC = () => {
           {/* Brand */}
           <Link href="/" className="flex items-center gap-3">
             <span className="w-3 h-3 bg-orange-500 rounded-full" />
-            <span className="font-semibold text-lg text-white">
-              FaizAhmadmp4
-            </span>
+            <span className="font-semibold text-lg text-white">Faizmp4</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -56,22 +61,22 @@ const Navbar: React.FC = () => {
               Services
             </button>
             <button
-              onClick={() => scrollToSection("#work")}
+              onClick={() => scrollToSection("#project")}
               className="hover:text-orange-500 transition-colors"
             >
-              Work
+              Project
             </button>
             <button
-              onClick={() => scrollToSection("#testimonial")}
+              onClick={() => scrollToSection("#testimonials")}
               className="hover:text-orange-500 transition-colors"
             >
               Testimonial
             </button>
             <button
-              onClick={() => scrollToSection("#email")}
+              onClick={() => scrollToSection("#faqs")}
               className="hover:text-orange-500 transition-colors"
             >
-              Email
+              Faqs
             </button>
           </div>
 
@@ -85,27 +90,15 @@ const Navbar: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button (Hamburger) */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => setIsMobileMenuOpen(true)}
             className="md:hidden text-white p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-lg"
           >
             <div className="w-6 h-6 flex items-center justify-center relative">
-              <span
-                className={`absolute w-5 h-0.5 bg-white transform transition-all duration-300 ${
-                  isMobileMenuOpen ? "rotate-45" : "-translate-y-1.5"
-                }`}
-              />
-              <span
-                className={`absolute w-5 h-0.5 bg-white transition-all duration-300 ${
-                  isMobileMenuOpen ? "opacity-0" : "opacity-100"
-                }`}
-              />
-              <span
-                className={`absolute w-5 h-0.5 bg-white transform transition-all duration-300 ${
-                  isMobileMenuOpen ? "-rotate-45" : "translate-y-1.5"
-                }`}
-              />
+              <span className="absolute w-5 h-0.5 bg-white -translate-y-1.5 transition-all duration-300" />
+              <span className="absolute w-5 h-0.5 bg-white transition-all duration-300" />
+              <span className="absolute w-5 h-0.5 bg-white translate-y-1.5 transition-all duration-300" />
             </div>
           </button>
         </nav>
@@ -113,10 +106,28 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed inset-0 z-40 bg-black/95 backdrop-blur-sm transition-all duration-500 ease-in-out ${
-          isMobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+        className={`md:hidden fixed inset-0 z-40 h-[100vh] bg-black/95 backdrop-blur-sm transition-all duration-500 ease-in-out ${
+          isMobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
         }`}
       >
+        {/* ❌ Close Button */}
+        <button
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="absolute top-6 right-6 text-white hover:text-orange-500 transition-all duration-300 p-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-8 h-8"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {/* Mobile Nav Links */}
         <div className="flex flex-col items-center justify-center min-h-screen gap-8 transition-all duration-500">
           <button
             onClick={() => scrollToSection("#services")}
@@ -125,22 +136,22 @@ const Navbar: React.FC = () => {
             Services
           </button>
           <button
-            onClick={() => scrollToSection("#work")}
+            onClick={() => scrollToSection("#project")}
             className="text-2xl text-white hover:text-orange-500 transition-colors"
           >
-            Work
+            Project
           </button>
           <button
-            onClick={() => scrollToSection("#testimonial")}
+            onClick={() => scrollToSection("#testimonials")}
             className="text-2xl text-white hover:text-orange-500 transition-colors"
           >
             Testimonial
           </button>
           <button
-            onClick={() => scrollToSection("#email")}
+            onClick={() => scrollToSection("#faqs")}
             className="text-2xl text-white hover:text-orange-500 transition-colors"
           >
-            Email
+            Faqs
           </button>
           <button
             onClick={() => scrollToSection("#contact")}

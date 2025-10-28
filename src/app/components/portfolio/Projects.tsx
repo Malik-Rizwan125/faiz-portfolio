@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section className=" text-white py-5">
+    <section id="project" className=" text-white py-5">
       <div className="max-w-7xl mx-auto px-4 text-center">
         {/* Top label */}
         <p className="text-white text-sm mb-2">● Work</p>
