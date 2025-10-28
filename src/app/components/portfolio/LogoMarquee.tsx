@@ -17,7 +17,7 @@ export default function LogoMarquee() {
   return (
     <section className="w-full overflow-hidden">
       <div className="container mx-auto">
-        <div className="relative flex overflow-hidden">
+        <div className="relative flex overflow-hidden h-[100px]">
           {/* Animation container */}
           <div className="flex animate-marquee-reverse whitespace-nowrap">
             {[...logos, ...logos].map((logo, index) => (
