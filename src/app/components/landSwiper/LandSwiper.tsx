@@ -6,7 +6,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import Link from "next/link";
 const LandSwiper = () => {
   const landVideos = [
     {
@@ -114,6 +114,13 @@ const LandSwiper = () => {
           </div>
         </Swiper>
       </div>
+        <div className="mt-8 flex justify-center">
+          <Link href="/categories" className="inline-block">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-base font-medium transition">
+              Explore More Edits
+            </button>
+          </Link>
+        </div>
     </section>
   );
 };
