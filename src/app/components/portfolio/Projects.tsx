@@ -9,37 +9,20 @@ import Link from "next/link";
 
 const Projects: React.FC = () => {
   const projects = [
-    {
-      id: 1,
-      video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn",
-    },
-    {
-      id: 2,
-      video: "https://youtube.com/shorts/A3iXH95xNAw?si=EEHnjUa9sdbVnaOv",
-    },
-    {
-      id: 3,
-      video: "https://youtube.com/shorts/G9ZHPfVW4IA?si=3ILltToLWN7lq0-L",
-    },
-    {
-      id: 4,
-      video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo",
-    },
-    {
-      id: 5,
-      video: "https://youtube.com/shorts/s1KjXurdgqM?si=JN4J901k7LGNKyPM",
-    },
-    {
-      id: 6,
-      video: "https://youtube.com/shorts/IQC1a8kzp0g?si=S19muVK0K6ki7hls",
-    },
+    { id: 1, video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn" },
+    { id: 2, video: "https://youtube.com/shorts/SubqqO0OSWk?si=F2ebYfx-nLlnqRrr" },
+    { id: 3, video: "https://youtube.com/shorts/dKxrbOUA4kk?si=vlRn5R_xHlGdBGMR" },
+    { id: 4, video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo" },
+    { id: 5, video: "https://youtube.com/shorts/qmiYaeN7vBE?si=Pmygu8dmihsvxSgS" },
+    { id: 6, video: "https://youtube.com/shorts/IQC1a8kzp0g?si=S19muVK0K6ki7hls" },
+    { id: 7, video: "https://youtube.com/shorts/AeSD4w37Tzc?si=B16jskqDne7Xs8xE" },
   ];
 
-  // ✅ Function to convert YouTube Shorts or Watch URLs into proper embed URLs
+  // ✅ Convert Shorts or watch links to clean embeddable URLs
   const getEmbedUrl = (url: string) => {
     const idMatch = url.match(/(?:shorts\/|watch\?v=)([\w-]+)/);
     const videoId = idMatch ? idMatch[1] : "";
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&rel=0&playlist=${videoId}`;
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&showinfo=0`;
   };
 
   return (
@@ -79,7 +62,7 @@ const Projects: React.FC = () => {
                   allowFullScreen
                 ></iframe>
 
-                {/* Overlay text */}
+                {/* Optional overlay text */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/40 text-white text-lg font-medium">
                   Project {p.id}
                 </div>

@@ -21,43 +21,51 @@ const categories: Category[] = [
     id: "lightContent",
     label: "Light Content",
     videos: [
-      { id: 1, video: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Light Content 1" },
-      { id: 2, video: "https://www.youtube.com/embed/3JZ_D3ELwOQ", title: "Light Content 2" },
-      { id: 3, video: "https://www.youtube.com/embed/l482T0yNkeo", title: "Light Content 3" },
-      { id: 4, video: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Light Content 4" },
+      { id: 1, video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn", title: "Light Content 1" },
+      { id: 2, video: "https://youtube.com/shorts/SubqqO0OSWk?si=F2ebYfx-nLlnqRrr", title: "Light Content 2" },
+      { id: 3, video: "https://youtube.com/shorts/dKxrbOUA4kk?si=vlRn5R_xHlGdBGMR", title: "Light Content 3" },
+      { id: 4, video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo", title: "Light Content 4" },
     ],
   },
   {
     id: "graphicDesign",
     label: "Graphic Design",
-    videos: [
-      { id: 5, video: "https://www.youtube.com/embed/3JZ_D3ELwOQ", title: "Graphic Design 1" },
-      { id: 6, video: "https://www.youtube.com/embed/l482T0yNkeo", title: "Graphic Design 2" },
-      { id: 7, video: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Graphic Design 3" },
-      { id: 8, video: "https://www.youtube.com/embed/3JZ_D3ELwOQ", title: "Graphic Design 4" },
+       videos: [
+      { id: 1, video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn", title: "Graphic Design 1" },
+      { id: 2, video: "https://youtube.com/shorts/SubqqO0OSWk?si=F2ebYfx-nLlnqRrr", title: "Graphic Design 2" },
+      { id: 3, video: "https://youtube.com/shorts/dKxrbOUA4kk?si=vlRn5R_xHlGdBGMR", title: "Graphic Design 3" },
+      { id: 4, video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo", title: "Graphic Design 4" },
     ],
+   
   },
   {
     id: "webDevelopment",
     label: "Web Development",
-    videos: [
-      { id: 9, video: "https://www.youtube.com/embed/l482T0yNkeo", title: "Web Dev 1" },
-      { id: 10, video: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Web Dev 2" },
-      { id: 11, video: "https://www.youtube.com/embed/3JZ_D3ELwOQ", title: "Web Dev 3" },
-      { id: 12, video: "https://www.youtube.com/embed/l482T0yNkeo", title: "Web Dev 4" },
+      videos: [
+      { id: 1, video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn", title: "Web Dev 1" },
+      { id: 2, video: "https://youtube.com/shorts/SubqqO0OSWk?si=F2ebYfx-nLlnqRrr", title: "Web Dev 2" },
+      { id: 3, video: "https://youtube.com/shorts/dKxrbOUA4kk?si=vlRn5R_xHlGdBGMR", title: "Web Dev 3" },
+      { id: 4, video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo", title: "Web Dev 4" },
     ],
+  
   },
   {
     id: "mobileApp",
     label: "Mobile Apps",
-    videos: [
-      { id: 13, video: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Mobile App 1" },
-      { id: 14, video: "https://www.youtube.com/embed/3JZ_D3ELwOQ", title: "Mobile App 2" },
-      { id: 15, video: "https://www.youtube.com/embed/l482T0yNkeo", title: "Mobile App 3" },
-      { id: 16, video: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Mobile App 4" },
+      videos: [
+      { id: 1, video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn", title: "Mobile App 1" },
+      { id: 2, video: "https://youtube.com/shorts/SubqqO0OSWk?si=F2ebYfx-nLlnqRrr", title: "Mobile App 2" },
+      { id: 3, video: "https://youtube.com/shorts/dKxrbOUA4kk?si=vlRn5R_xHlGdBGMR", title: "Mobile App 3" },
+      { id: 4, video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo", title: "Mobile App 4" },
     ],
+   
   },
 ];
+  const getEmbedUrl = (url: string) => {
+    const idMatch = url.match(/(?:shorts\/|watch\?v=)([\w-]+)/);
+    const videoId = idMatch ? idMatch[1] : "";
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&showinfo=0`;
+  };
 
 export default function CategoriesPage() {
   const [activeTab, setActiveTab] = useState("lightContent");
@@ -101,13 +109,12 @@ export default function CategoriesPage() {
                   >
                     <iframe
                       className="w-full h-full object-cover"
-                      src={`${project.video}?autoplay=1&mute=1&loop=1&playlist=${
-                        project.video.split("/embed/")[1]
-                      }&controls=0&modestbranding=1&rel=0`}
+                      src={getEmbedUrl(project.video)}
                       title={project.title}
                       allow="autoplay; encrypted-media; picture-in-picture"
                       allowFullScreen
                     ></iframe>
+
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/40">
                       <h3 className="text-white text-lg font-medium">{project.title}</h3>
                     </div>
