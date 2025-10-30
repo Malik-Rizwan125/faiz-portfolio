@@ -11,28 +11,39 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn",
     },
     {
       id: 2,
-      video: "https://www.youtube.com/embed/3JZ_D3ELwOQ",
+      video: "https://youtube.com/shorts/A3iXH95xNAw?si=EEHnjUa9sdbVnaOv",
     },
     {
       id: 3,
-      video: "https://www.youtube.com/embed/l482T0yNkeo",
+      video: "https://youtube.com/shorts/G9ZHPfVW4IA?si=3ILltToLWN7lq0-L",
     },
     {
       id: 4,
-      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo",
     },
     {
       id: 5,
-      video: "https://www.youtube.com/embed/3JZ_D3ELwOQ",
+      video: "https://youtube.com/shorts/s1KjXurdgqM?si=JN4J901k7LGNKyPM",
+    },
+    {
+      id: 6,
+      video: "https://youtube.com/shorts/IQC1a8kzp0g?si=S19muVK0K6ki7hls",
     },
   ];
 
+  // ✅ Function to convert YouTube Shorts or Watch URLs into proper embed URLs
+  const getEmbedUrl = (url: string) => {
+    const idMatch = url.match(/(?:shorts\/|watch\?v=)([\w-]+)/);
+    const videoId = idMatch ? idMatch[1] : "";
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&rel=0&playlist=${videoId}`;
+  };
+
   return (
-    <section id="project" className=" text-white py-5">
+    <section id="project" className="text-white py-5">
       <div className="max-w-7xl mx-auto px-4 text-center">
         {/* Top label */}
         <p className="text-white text-sm mb-2">● Work</p>
@@ -62,13 +73,13 @@ const Projects: React.FC = () => {
               <div className="relative group rounded-3xl overflow-hidden bg-gray-900">
                 <iframe
                   className="w-full aspect-[9/16] object-cover rounded-3xl"
-                  src={`${p.video}?autoplay=1&mute=1&loop=1&playlist=${p.video.split("/embed/")[1]}&controls=0&modestbranding=1&rel=0`}
+                  src={getEmbedUrl(p.video)}
                   title={`Project ${p.id}`}
                   allow="autoplay; encrypted-media; picture-in-picture"
                   allowFullScreen
                 ></iframe>
 
-                {/* Overlay text (optional) */}
+                {/* Overlay text */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/40 text-white text-lg font-medium">
                   Project {p.id}
                 </div>
@@ -88,7 +99,9 @@ const Projects: React.FC = () => {
             </button>
           </div>
         </Swiper>
-         <div className="mt-12">
+
+        {/* Explore more button */}
+        <div className="mt-12">
           <Link href="/categories" className="inline-block">
             <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-base font-medium transition">
               Explore More Edits
