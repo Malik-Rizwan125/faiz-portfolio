@@ -1,29 +1,35 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
+import ReactPlayer from "react-player";
 
 const Projects: React.FC = () => {
   const projects = [
     { id: 1, video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn" },
-    { id: 2, video: "https://youtube.com/shorts/SubqqO0OSWk?si=F2ebYfx-nLlnqRrr" },
-    { id: 3, video: "https://youtube.com/shorts/dKxrbOUA4kk?si=vlRn5R_xHlGdBGMR" },
-    { id: 4, video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo" },
+    { id: 2, video: "/video/pizza-poster.mp4" },
+    { id: 3, video: "/video/pizza-poster.mp4" },
+    { id: 4, video: "/videos/demo2.mp4" },
     { id: 5, video: "https://youtube.com/shorts/qmiYaeN7vBE?si=Pmygu8dmihsvxSgS" },
-    { id: 6, video: "https://youtube.com/shorts/IQC1a8kzp0g?si=S19muVK0K6ki7hls" },
-    { id: 7, video: "https://youtube.com/shorts/AeSD4w37Tzc?si=B16jskqDne7Xs8xE" },
   ];
 
-  // ✅ Convert Shorts or watch links to clean embeddable URLs
-  const getEmbedUrl = (url: string) => {
+  // Convert Shorts or watch links to clean YouTube URLs
+  const getVideoUrl = (url: string) => {
+    const isYouTube = /youtube\.com|youtu\.be/.test(url);
+    if (!isYouTube) return url; // local file or other source
     const idMatch = url.match(/(?:shorts\/|watch\?v=)([\w-]+)/);
     const videoId = idMatch ? idMatch[1] : "";
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&showinfo=0`;
+    return `https://www.youtube.com/watch?v=${videoId}`;
   };
+
+  // Component-level state for controls
+  const [autoplay, setAutoplay] = useState(true);
+  const [muted, setMuted] = useState(false);
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
 
   return (
     <section id="project" className="text-white py-5">
@@ -35,6 +41,8 @@ const Projects: React.FC = () => {
         <h2 className="text-3xl sm:text-5xl font-semibold mb-12">
           Explore our video editing <br /> work and projects
         </h2>
+
+
 
         {/* Swiper Section */}
         <Swiper
@@ -51,20 +59,29 @@ const Projects: React.FC = () => {
           }}
           className="relative"
         >
-          {projects.map((p) => (
+          {projects.map((p, index) => (
             <SwiperSlide key={p.id}>
-              <div className="relative group rounded-3xl overflow-hidden bg-gray-900">
-                <iframe
-                  className="w-full aspect-[9/16] object-cover rounded-3xl"
-                  src={getEmbedUrl(p.video)}
-                  title={`Project ${p.id}`}
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+              <div className="relative group rounded-3xl overflow-hidden bg-gray-900 aspect-[9/16]">
+                <ReactPlayer
+                  url={getVideoUrl(p.video)}
+                  width="100%"
+                  height="100%"
+                  playing={playingIndex === index && autoplay}
+                  muted={muted}
+                  loop
+                  className="rounded-3xl"
+                />
 
-                {/* Optional overlay text */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/40 text-white text-lg font-medium">
-                  Project {p.id}
+                {/* Play button overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition">
+                  <button
+                    onClick={() =>
+                      setPlayingIndex(playingIndex === index ? null : index)
+                    }
+                    className="bg-orange-500 hover:bg-orange-600 text-white px-2 py-1 rounded-full text-base font-medium transition"
+                  >
+                    {playingIndex === index ? "⏸" : "▶"}
+                  </button>
                 </div>
               </div>
             </SwiperSlide>
