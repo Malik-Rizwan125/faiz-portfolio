@@ -53,13 +53,17 @@ const categories: Category[] = [
     ],
   },
   {
-    id: "mobileApp",
-    label: "Mobile Apps",
+    id: "car",
+    label: "Car Video",
     videos: [
-      { id: 1, video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn", title: "Mobile App 1" },
-      { id: 2, video: "https://youtube.com/shorts/SubqqO0OSWk?si=F2ebYfx-nLlnqRrr", title: "Mobile App 2" },
-      { id: 3, video: "https://youtube.com/shorts/dKxrbOUA4kk?si=vlRn5R_xHlGdBGMR", title: "Mobile App 3" },
-      { id: 4, video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo", title: "Mobile App 4" },
+      { id: 1, video: "/video/car/car1.mp4", title: "car Video" },
+      { id: 2, video: "/video/car/car2.mp4", title: "car Video" },
+      { id: 3, video: "/video/car/car3.mp4", title: "car Video" },
+      { id: 4, video: "/video/car/car4.mp4", title: "car Video" },
+      { id: 5, video: "/video/car/car5.mp4", title: "car video" },
+      { id: 6, video: "/video/car/car6.mp4", title: "car video" },
+      { id: 7, video: "/video/car/car7.mp4", title: "car video" },
+      { id: 8, video: "/video/car/car8.mp4", title: "car video" },
     ],
   },
 ];
@@ -87,7 +91,7 @@ export default function CategoriesPage() {
             Project Categories
           </h1>
 
-       
+
 
           {/* ✅ Tabs */}
           <Tabs.Root
@@ -100,11 +104,10 @@ export default function CategoriesPage() {
                 <Tabs.Trigger
                   key={category.id}
                   value={category.id}
-                  className={`px-6 py-3 rounded-full transition ${
-                    activeTab === category.id
+                  className={`px-6 py-3 rounded-full transition ${activeTab === category.id
                       ? "bg-orange-500 text-white"
                       : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                  }`}
+                    }`}
                 >
                   {category.label}
                 </Tabs.Trigger>
