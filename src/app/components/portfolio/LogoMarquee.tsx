@@ -35,9 +35,9 @@ export default function LogoMarquee() {
               <Image
                 src={logo}
                 alt={`Logo ${index + 1}`}
-                width={160}
+                width={100}
                 height={100}
-                className="opacity-80 hover:opacity-100 transition-all duration-300 object-contain"
+                className="h-[100px] w-[100px] opacity-80 hover:opacity-100 transition-all duration-300 object-cover rounded-full"
               />
             </div>
           ))}
