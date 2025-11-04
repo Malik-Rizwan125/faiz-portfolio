@@ -66,23 +66,22 @@ export default function FAQ() {
                 >
                   <span className="font-medium text-white">{it.q}</span>
                   <div>
-                  <span
-                    className={`w-8 h-8 rounded-full flex items-center justify-center text-white transition-transform duration-300 bg-orange-500 ${
-                      openIndex === idx ? "rotate-180" : "rotate-0"
-                    }`}
-                  >
-                    {openIndex === idx ? "×" : "+"}
-                  </span>
+                    <span
+                      className={`w-8 h-8 rounded-full flex items-center justify-center text-white transition-transform duration-300 bg-[var(--pick-color)] ${openIndex === idx ? "rotate-180" : "rotate-0"
+                        }`}
+                    >
+                      {openIndex === idx ? "×" : "+"}
+                    </span>
+
                   </div>
                 </button>
 
                 {/* Animated Answer */}
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === idx
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === idx
                       ? "max-h-40 opacity-100 mt-3 delay-200"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <p className="text-sm text-gray-300">{it.a}</p>
                 </div>

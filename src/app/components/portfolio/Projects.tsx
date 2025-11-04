@@ -91,12 +91,12 @@ const Projects: React.FC = () => {
 
           {/* Navigation Buttons */}
           <div className="absolute inset-y-0 left-0 flex items-center z-10">
-            <button className="prev-slide bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 mx-2 transition w-10 h-10">
+            <button className="prev-slide bg-[var(--pick-color)] text-white rounded-full p-2 mx-2 transition w-10 h-10">
               ←
             </button>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center z-10">
-            <button className="next-slide bg-orange-500 hover:bg-orange-600 text-white rounded-full p-2 mx-2 transition w-10 h-10">
+            <button className="next-slide bg-[var(--pick-color)] text-white rounded-full p-2 mx-2 transition w-10 h-10">
               →
             </button>
           </div>
@@ -105,7 +105,7 @@ const Projects: React.FC = () => {
         {/* Explore more button */}
         <div className="mt-12">
           <Link href="/categories" className="inline-block">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-base font-medium transition">
+            <button className="bg-[var(--pick-color)]  text-white px-8 py-3 rounded-full text-base font-medium transition">
               Explore More Edits
             </button>
           </Link>
