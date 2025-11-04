@@ -11,23 +11,28 @@ const LandSwiper = () => {
   const landVideos = [
     {
       id: 1,
-      video: "https://youtu.be/f0KJFMHhpC0?si=U9ijpMEMhYxwJUsI",
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       title: "Landscape Video 1",
       description: "Beautiful mountain scenery with flowing rivers",
     },
     {
       id: 2,
-      video: "https://youtu.be/CG2zu6MnZvU?si=MAqeI5NAATs9n47S",
+      video: "https://www.youtube.com/embed/3JZ_D3ELwOQ",
       title: "Landscape Video 2",
       description: "Serene beach sunset with waves",
     },
     {
       id: 3,
-      video: "https://youtu.be/o-QeNZo-r_0?si=a-Ybh7AtRy32bbD5",
+      video: "https://www.youtube.com/embed/l482T0yNkeo",
       title: "Landscape Video 3",
       description: "Dense forest aerial view",
     },
-
+    {
+      id: 4,
+      video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      title: "Landscape Video 4",
+      description: "Desert sand dunes at sunset",
+    },
   ];
 
   return (
@@ -53,8 +58,8 @@ const LandSwiper = () => {
           }}
           pagination={{
             clickable: true,
-            bulletClass: 'swiper-pagination-bullet !bg-[var(--pick-color)]',
-            bulletActiveClass: 'swiper-pagination-bullet-active !bg-[var(--pick-color)]',
+            bulletClass: 'swiper-pagination-bullet !bg-orange-500',
+            bulletActiveClass: 'swiper-pagination-bullet-active !bg-orange-500',
           }}
           autoplay={{
             delay: 5000,
@@ -94,14 +99,14 @@ const LandSwiper = () => {
 
           {/* Navigation Buttons */}
           <div className="absolute inset-y-0 left-0 flex items-center z-10">
-            <button className="land-prev-slide bg-[var(--pick-color)]  text-white rounded-full p-1 mx-4 transition-all transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
+            <button className="land-prev-slide bg-[#E12CEC] text-white rounded-full p-1 mx-4 transition-all transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center z-10">
-            <button className="land-next-slide bg-[var(--pick-color)]  text-white rounded-full p-1 mx-4 transition-all transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
+            <button className="land-next-slide bg-[#E12CEC] text-white rounded-full p-1 mx-4 transition-all transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -111,7 +116,7 @@ const LandSwiper = () => {
       </div>
         <div className="mt-8 flex justify-center">
           <Link href="/landscape-categories" className="inline-block">
-            <button className="bg-[var(--pick-color)]  text-white px-8 py-3 rounded-full text-base font-medium transition">
+            <button className="bg-[#E12CEC] text-white px-8 py-3 rounded-full text-base font-medium transition">
               Explore More Edits
             </button>
           </Link>

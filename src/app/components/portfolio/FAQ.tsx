@@ -67,7 +67,7 @@ export default function FAQ() {
                   <span className="font-medium text-white">{it.q}</span>
                   <div>
                     <span
-                      className={`w-8 h-8 rounded-full flex items-center justify-center text-white transition-transform duration-300 bg-[var(--pick-color)] ${openIndex === idx ? "rotate-180" : "rotate-0"
+                      className={`w-8 h-8 rounded-full flex items-center justify-center text-white transition-transform duration-300 bg-[#E12CEC] ${openIndex === idx ? "rotate-180" : "rotate-0"
                         }`}
                     >
                       {openIndex === idx ? "×" : "+"}

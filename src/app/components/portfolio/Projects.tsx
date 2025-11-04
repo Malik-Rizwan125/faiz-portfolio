@@ -1,12 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
-import ReactPlayer from "react-player";
+
+// ✅ Dynamically import ReactPlayer only on client
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 const Projects: React.FC = () => {
   const projects = [
@@ -22,13 +25,12 @@ const Projects: React.FC = () => {
   // Convert Shorts or watch links to clean YouTube URLs
   const getVideoUrl = (url: string) => {
     const isYouTube = /youtube\.com|youtu\.be/.test(url);
-    if (!isYouTube) return url; // local file or other source
+    if (!isYouTube) return url;
     const idMatch = url.match(/(?:shorts\/|watch\?v=)([\w-]+)/);
     const videoId = idMatch ? idMatch[1] : "";
     return `https://www.youtube.com/watch?v=${videoId}`;
   };
 
-  // Component-level state for controls
   const [autoplay, setAutoplay] = useState(true);
   const [muted, setMuted] = useState(false);
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
@@ -36,15 +38,10 @@ const Projects: React.FC = () => {
   return (
     <section id="project" className="text-white py-5">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        {/* Top label */}
         <p className="text-white text-sm mb-2">● Work</p>
-
-        {/* Main heading */}
         <h2 className="text-3xl sm:text-5xl font-semibold mb-12">
           Explore our video editing <br /> work and projects
         </h2>
-
-
 
         {/* Swiper Section */}
         <Swiper
@@ -64,6 +61,7 @@ const Projects: React.FC = () => {
           {projects.map((p, index) => (
             <SwiperSlide key={p.id}>
               <div className="relative group rounded-3xl overflow-hidden bg-gray-900 aspect-[9/16]">
+                {/* ✅ ReactPlayer only renders on client */}
                 <ReactPlayer
                   url={getVideoUrl(p.video)}
                   width="100%"
@@ -80,7 +78,7 @@ const Projects: React.FC = () => {
                     onClick={() =>
                       setPlayingIndex(playingIndex === index ? null : index)
                     }
-                    className="bg-orange-500 hover:bg-orange-600 text-white px-2 py-1 rounded-full text-base font-medium transition"
+                    className="bg-[#E12CEC] text-white px-2 py-1 rounded-full text-base font-medium transition"
                   >
                     {playingIndex === index ? "⏸" : "▶"}
                   </button>
@@ -91,12 +89,12 @@ const Projects: React.FC = () => {
 
           {/* Navigation Buttons */}
           <div className="absolute inset-y-0 left-0 flex items-center z-10">
-            <button className="prev-slide bg-[var(--pick-color)] text-white rounded-full p-2 mx-2 transition w-10 h-10">
+            <button className="prev-slide bg-[#E12CEC] text-white rounded-full p-2 mx-2 transition w-10 h-10">
               ←
             </button>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center z-10">
-            <button className="next-slide bg-[var(--pick-color)] text-white rounded-full p-2 mx-2 transition w-10 h-10">
+            <button className="next-slide bg-[#E12CEC] text-white rounded-full p-2 mx-2 transition w-10 h-10">
               →
             </button>
           </div>
@@ -105,7 +103,7 @@ const Projects: React.FC = () => {
         {/* Explore more button */}
         <div className="mt-12">
           <Link href="/categories" className="inline-block">
-            <button className="bg-[var(--pick-color)]  text-white px-8 py-3 rounded-full text-base font-medium transition">
+            <button className="bg-[#E12CEC] text-white px-8 py-3 rounded-full text-base font-medium transition">
               Explore More Edits
             </button>
           </Link>
