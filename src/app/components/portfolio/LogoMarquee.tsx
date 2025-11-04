@@ -11,13 +11,13 @@ const logos = [
   "/images/logo/logo5.jpg",
   "/images/logo/logo6.png",
   "/images/logo/logo7.png",
-  "/images/logo/logo8.png",
+  // "/images/logo/logo8.png",
   "/images/logo/logo9.png",
   "/images/logo/logo10.png",
-  "/images/logo/logo11.png",
-  "/images/logo/logo12.png",
-  "/images/logo/logo13.png",
-  "/images/logo/logo14.png",
+  // "/images/logo/logo11.png",
+  // "/images/logo/logo12.png",
+  // "/images/logo/logo13.png",
+  // "/images/logo/logo14.png",
 ];
 
 export default function LogoMarquee() {
