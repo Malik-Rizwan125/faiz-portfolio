@@ -11,10 +11,12 @@ import ReactPlayer from "react-player";
 const Projects: React.FC = () => {
   const projects = [
     { id: 1, video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn" },
-    { id: 2, video: "/video/pizza-poster.mp4" },
-    { id: 3, video: "/video/pizza-poster.mp4" },
-    { id: 4, video: "/videos/demo2.mp4" },
+    { id: 2, video: "https://youtube.com/shorts/SubqqO0OSWk?si=F2ebYfx-nLlnqRrr" },
+    { id: 3, video: "https://youtube.com/shorts/dKxrbOUA4kk?si=vlRn5R_xHlGdBGMR" },
+    { id: 4, video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo" },
     { id: 5, video: "https://youtube.com/shorts/qmiYaeN7vBE?si=Pmygu8dmihsvxSgS" },
+    { id: 6, video: "https://youtube.com/shorts/IQC1a8kzp0g?si=S19muVK0K6ki7hls" },
+    { id: 7, video: "https://youtube.com/shorts/AeSD4w37Tzc?si=B16jskqDne7Xs8xE" },
   ];
 
   // Convert Shorts or watch links to clean YouTube URLs

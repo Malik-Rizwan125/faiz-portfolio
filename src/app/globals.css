@@ -309,19 +309,19 @@ body {
   display: none !important;
 }
 
-/* Firefox */
-.hero-video::-moz-controls {
-  display: none !important;
-}@keyframes marquee-reverse {
+/* Smooth infinite marquee animation */
+@keyframes marquee {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
 }
 
-.animate-marquee-reverse {
+.animate-marquee {
   display: flex;
-  animation: marquee-reverse 10s linear infinite;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
 }
+

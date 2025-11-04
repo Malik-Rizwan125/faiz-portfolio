@@ -19,36 +19,35 @@ interface Category {
 
 const categories: Category[] = [
   {
-    id: "foodVideos",
-    label: "Food video",
+    id: "addVideos",
+    label: "Add video",
     videos: [
-      { id: 1, video: "https://youtube.com/shorts/ZSzbUvOFngc?si=a5op2S2z0bu0Z93O", title: "Food video" },
-      { id: 2, video: "https://youtube.com/shorts/mpFq8bV-GeI?si=_BlvFQt_BUj1xOr-", title: "Food video" },
-      { id: 3, video: "https://youtube.com/shorts/ChsOtmmQi8E?si=Z5BWf5OMjl0xjgJ6", title: "Food video" },
-      { id: 4, video: "https://youtube.com/shorts/2bdEC-yAFtI?si=Qkeh2R2Tq9jSg5ln", title: "Food video" },
-      { id: 5, video: "https://youtube.com/shorts/bU3986MWNUw?si=AmdagNeXRicy_c2Z", title: "Food video" },
-      
+      { id: 1, video: "https://youtu.be/f0KJFMHhpC0?si=U9ijpMEMhYxwJUsI", title: "Add video" },
+      { id: 2, video: "https://youtu.be/CG2zu6MnZvU?si=MAqeI5NAATs9n47S", title: "Add video" },
+      { id: 3, video: "https://youtu.be/o-QeNZo-r_0?si=a-Ybh7AtRy32bbD5", title: "Add video" },
     ],
   },
   {
     id: "motionGraphic",
     label: "Motion Graphic",
     videos: [
-      { id: 1, video: "https://youtube.com/shorts/AeSD4w37Tzc?si=swguW9D5GCe5a7Xt", title: "Motion Graphic" },
-      { id: 2, video: "https://youtube.com/shorts/9vA85vhY-fc?si=bv15ps5YLPTU1TbH", title: "Motion Graphic" },
-      { id: 3, video: "https://youtube.com/shorts/SN5GTwCMIfA?si=SH9RmB1vAyhhjNJa", title: "Motion Graphic" },
-      { id: 4, video: "https://youtube.com/shorts/8Apl7XHNWNg?si=2rlGcTX0bMFAe_xt ", title: "Motion Graphic" },
-      { id: 5, video: "https://youtube.com/shorts/waponT0WifI?si=ukAsSYtJxvnl8elw", title: "Motion Graphic" },
-      { id: 6, video: "https://youtu.be/qYceYH4eCu0?si=lPYA-blL1mmQDPHe", title: "Motion Graphic" },
-      { id: 7, video: "https://youtube.com/shorts/40pfDOqeM6g?si=PPFLVqtckm1cKHth", title: "Motion Graphic" },
+      { id: 1, video: "https://youtu.be/I3au6xBggCQ?si=znjtQ1f7nWJgdmax", title: "Motion Graphic" },
+      { id: 2, video: "https://youtu.be/EwGn6mMMUUU?si=wN6DrQgdrHJ6kifv", title: "Motion Graphic" },
     ],
   },
   {
-    id: "caption",
-    label: "Caption",
+    id: "informative",
+    label: "Informative",
     videos: [
-      { id: 1, video: "https://youtube.com/shorts/jHPlT61fgGU?si=UJ2sZBO5wUO13wn_", title: "Caption Video" },
-      { id: 2, video: "https://youtube.com/shorts/T1f8R4ITxcs?si=Xuvkf_ce4igd5P3n", title: "Caption Video" },
+      { id: 1, video: "https://youtu.be/75E9QAuTUyg?si=YVKlW9V6BHb0GiUU", title: "Informative Video" },
+      { id: 2, video: "https://youtu.be/EwGn6mMMUUU?si=wN6DrQgdrHJ6kifv", title: "Informative Video" },
+      { id: 3, video: "https://youtu.be/f39l5o-_bnk?si=kDPr0Kfv6yGeZLr1", title: "Informative Video" },
+      { id: 4, video: "https://youtu.be/5gi_Zxj-anY?si=ZWRAoDe241MQzMch", title: "Informative Video" },
+      { id: 5, video: "https://youtu.be/_4m3IdNYkZE?si=LyeFsdS2lXJnKpgZ", title: "Informative Video" },
+      { id: 6, video: "https://youtu.be/aV9esFfcBsU?si=sF2EREoGgX4Gd_0e", title: "Informative Video" },
+      { id: 7, video: "https://youtu.be/d7tBvHJT_2Y?si=G72yRsKRPREyY_PU", title: "Informative Video" },
+      { id: 8, video: "https://youtu.be/qYceYH4eCu0?si=lPYA-blL1mmQDPHe", title: "Informative Video" },
+      { id: 9, video: "https://youtu.be/SktiqsidDQk?si=vqf170mq2H-x8PR8", title: "Informative Video" },
     ],
   },
   {
@@ -67,15 +66,19 @@ const categories: Category[] = [
 
 // ✅ Helper to clean Shorts/YouTube URLs
 const getVideoUrl = (url: string) => {
-  const isYouTube = /youtube\.com|youtu\.be/.test(url);
-  if (!isYouTube) return url;
-  const idMatch = url.match(/(?:shorts\/|watch\?v=)([\w-]+)/);
-  const videoId = idMatch ? idMatch[1] : "";
-  return `https://www.youtube.com/watch?v=${videoId}`;
+  if (!url) return "";
+
+  // Match all YouTube formats
+  const match = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/))([\w-]+)/
+  );
+
+  const videoId = match ? match[1] : "";
+  return videoId ? `https://www.youtube.com/watch?v=${videoId}` : url;
 };
 
 export default function CategoriesPage() {
-  const [activeTab, setActiveTab] = useState("foodVideos");
+  const [activeTab, setActiveTab] = useState("addVideos");
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
   const [autoplay, setAutoplay] = useState(true);
   const [muted, setMuted] = useState(false);
@@ -92,7 +95,7 @@ export default function CategoriesPage() {
 
           {/* ✅ Tabs */}
           <Tabs.Root
-            defaultValue="foodVideos"
+            defaultValue="addVideos"
             className="w-full"
             onValueChange={(value) => setActiveTab(value)}
           >
