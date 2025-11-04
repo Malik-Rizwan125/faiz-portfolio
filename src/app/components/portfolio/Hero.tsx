@@ -2,9 +2,9 @@ import React from "react";
 
 const Hero: React.FC = () => {
   return (
-  <section id="services" className="container min-h-screen flex flex-col items-center mt-[60px] lg:mt-[120px] justify-center  text-white text-center px-4">
+  <section id="services" className="container min-h-screen flex flex-col items-center mt-[60px] lg:mt-[90px] justify-center  text-white text-center px-4">
       {/* Top badge */}
-      <p className="text-sm text-orange-400 mb-4">
+      <p className="text-sm text-[#E12CEC] mb-4">
         ● 3 Spots Available
       </p>
 
@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
 </div>
       {/* Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-6">
-        <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-sm font-medium transition">
+        <button className="bg-[#E12CEC]  text-white px-6 py-3 rounded-full text-sm font-medium transition">
           Editing Work
         </button>
         <button className="text-gray-300 hover:text-white text-sm font-medium">

@@ -40,7 +40,7 @@ const LandSwiper = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <p className="text-orange-500 text-sm font-medium mb-2">● Landscape Videos</p>
+          <p className="text-[#E12CEC] text-sm font-medium mb-2">● Landscape Videos</p>
           <h2 className="text-3xl sm:text-5xl font-semibold mb-6">
             Stunning Landscape <br /> Videos Collection
           </h2>

@@ -42,7 +42,7 @@ export default function FAQ() {
               Frequently asked questions about us
             </h2>
 
-            <div className="bg-gradient-to-r from-orange-500 to-orange-400 rounded-2xl p-6 inline-block">
+            <div className="bg-[#E12CEC] rounded-2xl p-6 inline-block">
               <div className="text-white font-medium mb-3">
                 Have a question? Let's discuss it now!
               </div>

@@ -174,7 +174,7 @@ export default function Testimonial() {
           <div className="text-center mt-10">
             <button
               onClick={handleViewMore}
-              className="text-black bg-white px-6 py-3 rounded-full text-sm font-medium "
+              className="text-white bg-[#E12CEC] px-6 py-3 rounded-full text-sm font-medium "
             >
               View More
             </button>

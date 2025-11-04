@@ -36,10 +36,10 @@ const Projects: React.FC = () => {
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
 
   return (
-    <section id="project" className="text-white py-5">
+    <section id="project" className=" py-5">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="text-white text-sm mb-2">● Work</p>
-        <h2 className="text-3xl sm:text-5xl font-semibold mb-12">
+        <p className="text-[#E12CEC] text-sm mb-2">● Work</p>
+        <h2 className="text-3xl sm:text-5xl text-white font-semibold mb-12">
           Explore our video editing <br /> work and projects
         </h2>
 

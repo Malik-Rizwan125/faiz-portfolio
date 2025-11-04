@@ -56,25 +56,25 @@ useEffect(() => {
           <div className="hidden md:flex items-center gap-8 text-gray-300">
             <button
               onClick={() => scrollToSection("#services")}
-              className="hover:text-orange-500 transition-colors"
+              className=" transition-colors"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("#project")}
-              className="hover:text-orange-500 transition-colors"
+              className=" transition-colors"
             >
               Project
             </button>
             <button
               onClick={() => scrollToSection("#testimonials")}
-              className="hover:text-orange-500 transition-colors"
+              className=" transition-colors"
             >
               Testimonial
             </button>
             <button
               onClick={() => scrollToSection("#faqs")}
-              className="hover:text-orange-500 transition-colors"
+              className=" transition-colors"
             >
               Faqs
             </button>
@@ -84,7 +84,7 @@ useEffect(() => {
           <div className="hidden md:block">
             <button
               onClick={() => scrollToSection("#contact")}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-[0_0_10px_rgba(255,140,0,0.4)]"
+              className="bg-[#E12CEC] text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105 shadow-[0_0_10px_rgba(255,140,0,0.4)]"
             >
               Contact us
             </button>
@@ -113,7 +113,7 @@ useEffect(() => {
         {/* ❌ Close Button */}
         <button
           onClick={() => setIsMobileMenuOpen(false)}
-          className="absolute top-6 right-6 text-white hover:text-orange-500 transition-all duration-300 p-2"
+          className="absolute top-6 right-6 text-white  transition-all duration-300 p-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -131,31 +131,31 @@ useEffect(() => {
         <div className="flex flex-col items-center justify-center min-h-screen gap-8 transition-all duration-500">
           <button
             onClick={() => scrollToSection("#services")}
-            className="text-2xl text-white hover:text-orange-500 transition-colors"
+            className="text-2xl text-white  transition-colors"
           >
             Services
           </button>
           <button
             onClick={() => scrollToSection("#project")}
-            className="text-2xl text-white hover:text-orange-500 transition-colors"
+            className="text-2xl text-white  transition-colors"
           >
             Project
           </button>
           <button
             onClick={() => scrollToSection("#testimonials")}
-            className="text-2xl text-white hover:text-orange-500 transition-colors"
+            className="text-2xl text-white  transition-colors"
           >
             Testimonial
           </button>
           <button
             onClick={() => scrollToSection("#faqs")}
-            className="text-2xl text-white hover:text-orange-500 transition-colors"
+            className="text-2xl text-white  transition-colors"
           >
             Faqs
           </button>
           <button
             onClick={() => scrollToSection("#contact")}
-            className="text-2xl bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full transition-all transform hover:scale-105"
+            className="text-2xl bg-[#E12CEC]  text-white px-8 py-3 rounded-full transition-all transform hover:scale-105"
           >
             Contact us
           </button>
