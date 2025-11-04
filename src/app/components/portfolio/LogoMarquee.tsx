@@ -4,15 +4,16 @@ import Image from "next/image";
 import React from "react";
 
 const logos = [
-  { src: "/images/logo/logo1.png", contain: false },
+  // { src: "/images/logo/logo1.png", contain: true },
   { src: "/images/logo/logo2.png", contain: false },
   { src: "/images/logo/logo3.png", contain: true },
   { src: "/images/logo/logo4.jpg", contain: false },
   { src: "/images/logo/logo5.jpg", contain: false },
-  { src: "/images/logo/logo6.png", contain: false },
-  { src: "/images/logo/logo7.png", contain: false },
+  { src: "/images/logo/logo6.png", contain: true },
+  // { src: "/images/logo/logo7.png", contain: false },
   { src: "/images/logo/logo9.png", contain: true },
   { src: "/images/logo/logo10.png", contain: true },
+  { src: "/images/logo/logo14.png", contain: true },
 ];
 
 export default function LogoMarquee() {
@@ -24,7 +25,7 @@ export default function LogoMarquee() {
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 flex justify-center items-center px-10"
+              className="flex-shrink-0 flex justify-center items-center px-5 lg:px-10"
             >
               <Image
                 src={logo.src}
