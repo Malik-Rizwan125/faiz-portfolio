@@ -1,8 +1,9 @@
+import Image from "next/image";
 import React from "react";
 
 const Hero: React.FC = () => {
   return (
-  <section id="services" className="container min-h-screen flex flex-col items-center mt-[60px] lg:mt-[90px] justify-center  text-white text-center px-4">
+  <section id="services" className="container flex flex-col items-center mt-10 justify-center text-white text-center">
       {/* Top badge */}
       <p className="text-sm text-[#E12CEC] mb-4">
         ● 3 Spots Available
@@ -10,13 +11,11 @@ const Hero: React.FC = () => {
 
       {/* Main heading */}
       <div className="lg:w-[70%]">
-      <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6 ">
+      <h1 className="text-3xl md:text-4xl sm:text-6xl font-bold leading-tight mb-6 p-0">
         Every Great Story{" "}
         <span className="inline-flex items-center">
-          Deserves a Great Editor
-         
+          Deserves a Great Editor.
         </span>
-        .
       </h1>
 </div>
       {/* Buttons */}
@@ -31,13 +30,13 @@ const Hero: React.FC = () => {
 
       {/* Customer Info */}
       <div className="flex items-center gap-2 text-gray-400 text-sm mb-10">
-        <img
-          src="https://via.placeholder.com/32"
-          alt="profile"
-          className="w-8 h-8 rounded-full border border-gray-700"
-        />
+     <div className="flex items-center">
+        <Image src="/images/avatar1.avif" alt="logo" width={30} height={30} className="w-8 h-8 rounded-full border border-[#E12CEC]" />
+        <Image src="/images/avatar2.avif" alt="logo" width={30} height={30} className="w-8 h-8 rounded-full border border-[#E12CEC]" />
+        <Image src="/images/avatar3.avif" alt="logo" width={30} height={30} className="w-8 h-8 rounded-full border border-[#E12CEC]" />
+        </div>
         <p>
-          <span className="text-blue-400 font-semibold">VIP</span> 100+ Happy customers
+          <span className="text-[#E12CEC] font-semibold">VIP</span> 100+ Happy customers
         </p>
       </div>
 

@@ -13,13 +13,10 @@ const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 const Projects: React.FC = () => {
   const projects = [
-    { id: 1, video: "https://youtube.com/shorts/qcXZ0sd8GbA?si=wMZZUmlx5U5F0Skn" },
-    { id: 2, video: "https://youtube.com/shorts/SubqqO0OSWk?si=F2ebYfx-nLlnqRrr" },
-    { id: 3, video: "https://youtube.com/shorts/dKxrbOUA4kk?si=vlRn5R_xHlGdBGMR" },
-    { id: 4, video: "https://youtube.com/shorts/hnJTUSUH6fU?si=nlhf-dnJiVwCY3uo" },
-    { id: 5, video: "https://youtube.com/shorts/qmiYaeN7vBE?si=Pmygu8dmihsvxSgS" },
-    { id: 6, video: "https://youtube.com/shorts/IQC1a8kzp0g?si=S19muVK0K6ki7hls" },
-    { id: 7, video: "https://youtube.com/shorts/AeSD4w37Tzc?si=B16jskqDne7Xs8xE" },
+    { id: 1, video: "https://youtube.com/shorts/Pmr03_wqe10?si=W60rMuOmcB5FOuxy" },
+    { id: 2, video: "https://youtube.com/shorts/NwW31gJpMlI?si=JhiPImeCMG4mZqa-" },
+    { id: 3, video: "https://youtube.com/shorts/8WeRNT1-sl0?si=XAYP4ebvaYX1h9mH" },
+    { id: 4, video: "https://youtube.com/shorts/bO84pHiC-BA?si=QAzaHwJLTADziW8U" },
   ];
 
   // Convert Shorts or watch links to clean YouTube URLs
@@ -36,8 +33,8 @@ const Projects: React.FC = () => {
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
 
   return (
-    <section id="project" className=" py-5">
-      <div className="max-w-7xl mx-auto px-4 text-center">
+    <section id="project" className="">
+      <div className="max-w-7xl mx-auto text-center">
         <p className="text-[#E12CEC] text-sm mb-2">● Work</p>
         <h2 className="text-3xl sm:text-5xl text-white font-semibold mb-12">
           Explore our video editing <br /> work and projects

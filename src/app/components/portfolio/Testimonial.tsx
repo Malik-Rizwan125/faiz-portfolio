@@ -115,7 +115,7 @@ export default function Testimonial() {
 
   return (
     <section id="testimonials">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto !px-0">
         <h2 className="text-center text-3xl font-semibold mb-10 text-white">What Our Clients Say</h2>
 
         {/* Grid layout */}

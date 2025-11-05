@@ -30,7 +30,7 @@ export default function CounterSection() {
 
   return (
     <section ref={ref} className="py-5 ">
-      <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div className="container mx-auto !px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         {counters.map((item, index) => (
           <div key={index} className="relative">
             {/* Vertical divider except last */}

@@ -34,7 +34,7 @@ useEffect(() => {
 
   return (
     <header
-      className={`fixed top-0 md:top-6 left-0 w-full z-50 flex justify-center transition-all duration-500 ${
+      className={`fixed top-5 md:top-6 left-0 w-full z-50 flex justify-center transition-all duration-500 ${
         isScrolled
           ? "bg-[linear-gradient(rgba(28,28,28,0.8)_-38%,rgba(0,0,0,0.8)_156%)] backdrop-blur-md"
           : "bg-transparent"
@@ -48,7 +48,7 @@ useEffect(() => {
         >
           {/* Brand */}
           <Link href="/" className="flex items-center gap-3">
-            <span className="w-3 h-3 bg-orange-500 rounded-full" />
+            <span className="w-3 h-3 bg-[#E12CEC] rounded-full" />
             <span className="font-semibold text-lg text-white">Faizmp4</span>
           </Link>
 

@@ -34,11 +34,16 @@ export default function FAQ() {
 
   return (
     <section id="faqs" className="">
-      <div className="container">
+      <div className="container !px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Column */}
+         
           <div>
-            <h2 className="text-3xl font-semibold mb-6 text-white">
+  <div className="inline-flex items-center gap-3 justify-center sm:justify-start mb-1">
+            <span className="w-2 h-2 rounded-full bg-[#E12CEC] inline-block" />
+            <span className="text-sm text-gray-300">Faqs</span>
+          </div>
+            <h2 className="text-3xl font-semibold mb-6 text-white text-center sm:text-start">
               Frequently asked questions about us
             </h2>
 

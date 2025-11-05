@@ -20,12 +20,12 @@ export default function Process() {
 ];
   return (
     <section id="process" className="">
-      <div className="container">
+      <div className="container !px-0">
         {/* Bottom: image left, text steps right */}
         <div className="flex flex-col lg:flex-row gap-10 items-start ">
           <div className='w-full lg:w-1/2'>
             <img
-              src="/images/process.avif"
+              src="/images/process.jpg"
               alt="editor at work"
               className="w-full rounded-2xl object-cover h-[420px]"
             />
@@ -37,9 +37,9 @@ export default function Process() {
               <span className="text-[#E12CEC] ">Process</span>
             </div>
 
-            <h3 className="text-3xl font-semibold text-white mb-6">How our video editing <br />service works for you</h3>
+            <h3 className="text-2xl lg:text-3xl font-semibold text-white mb-6">How our video editing <br />service works for you</h3>
 
-               <ol className="space-y-6 text-gray-300 mt-20">
+               <ol className="space-y-6 text-gray-300 mt-5 lg:mt-20">
                    {steps.map((step) => (
                      <li key={step.number} className="flex gap-6 items-start">
                        <div className="text-xl font-bold">{step.number}</div>
