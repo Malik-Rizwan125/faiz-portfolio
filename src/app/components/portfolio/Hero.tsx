@@ -1,7 +1,14 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 
 const Hero: React.FC = () => {
+   const scrollToSection = (id: string) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
   <section id="services" className="container flex flex-col items-center mt-10 justify-center text-white text-center">
       {/* Top badge */}
@@ -23,7 +30,7 @@ const Hero: React.FC = () => {
         <button className="bg-[#E12CEC]  text-white px-6 py-3 rounded-full text-sm font-medium transition">
           Editing Work
         </button>
-        <button className="text-gray-300 hover:text-white text-sm font-medium">
+        <button onClick={() => scrollToSection("#project")} className="text-gray-300 hover:text-white text-sm font-medium">
           How it works
         </button>
       </div>
