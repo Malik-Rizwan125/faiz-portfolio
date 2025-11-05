@@ -7,10 +7,10 @@ interface CounterItem {
 }
 
 const counters: CounterItem[] = [
-  { value: 160, label: "Jobs" },
-  { value: 10, label: "Years of Experience" },
-  { value: 210, label: "Specialists" },
-  { value: 430, label: "Staff Members" },
+  { value: 100, label: "Projects" },
+  { value: 3, label: "Year Experience" },
+  { value: 6, label: "Skills" },
+  { value: 50, label: "Happy Clients" },
 ];
 
 export default function CounterSection() {
@@ -30,7 +30,7 @@ export default function CounterSection() {
 
   return (
     <section ref={ref} className="py-5 ">
-      <div className="container mx-auto !px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div className="container mx-auto !px-0 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         {counters.map((item, index) => (
           <div key={index} className="relative">
             {/* Vertical divider except last */}
