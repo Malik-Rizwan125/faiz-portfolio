@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
     }
   };
   return (
-  <section id="services" className="container flex flex-col items-center mt-10 justify-center text-white text-center">
+  <section id="services" className="flex flex-col items-center mt-10 justify-center text-white text-center">
       {/* Top badge */}
       <p className="text-sm text-[#E12CEC] mb-4">
         ● 3 Spots Available

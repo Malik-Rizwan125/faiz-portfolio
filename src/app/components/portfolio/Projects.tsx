@@ -57,7 +57,7 @@ const Projects: React.FC = () => {
         >
           {projects.map((p, index) => (
             <SwiperSlide key={p.id}>
-              <div className="relative group rounded-none sm:rounded-3xl overflow-hidden bg-gray-900 aspect-[9/16] w-full">
+              <div className="relative group rounded-3xl overflow-hidden bg-gray-900 aspect-[9/16] w-full">
                 {/* ✅ ReactPlayer only renders on client */}
                 <ReactPlayer
                   url={getVideoUrl(p.video)}
@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
                   playing={playingIndex === index && autoplay}
                   muted={muted}
                   loop
-                  className="!rounded-lg"
+                  className="rounded-lg"
                 />
 
                 {/* Play button overlay */}
