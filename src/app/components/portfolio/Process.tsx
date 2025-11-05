@@ -33,7 +33,7 @@ export default function Process() {
 
           <div className="w-full lg:w-1/2">
             <div className="flex items-center gap-3 mb-4">
-              <span className="w-3 h-3 rounded-full bg-[#E12CEC] inline-block" />
+              <span className="w-2 h-2 rounded-full bg-[#E12CEC] inline-block" />
               <span className="text-[#E12CEC] ">Process</span>
             </div>
 
