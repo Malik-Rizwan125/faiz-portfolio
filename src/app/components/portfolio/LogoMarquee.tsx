@@ -30,7 +30,7 @@ export default function LogoMarquee() {
           delay: 0, // continuous motion
           disableOnInteraction: false,
         }}
-        speed={2000} // smooth continuous motion
+        speed={5000} // smooth continuous motion
         slidesPerView={2}
         breakpoints={{
           640: { slidesPerView: 3 },

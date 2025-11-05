@@ -34,7 +34,7 @@ const Projects: React.FC = () => {
 
   return (
     <section id="project" className="">
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center px-0 sm:px-6 lg:px-8">
         <p className="text-[#E12CEC] text-sm mb-2">● Work</p>
         <h2 className="text-3xl sm:text-5xl text-white font-semibold mb-12">
           Explore our video editing <br /> work and projects
@@ -47,17 +47,17 @@ const Projects: React.FC = () => {
             nextEl: ".next-slide",
             prevEl: ".prev-slide",
           }}
-          spaceBetween={30}
-          slidesPerView={1.2}
+          spaceBetween={0}
+          slidesPerView={1}
           breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
           }}
           className="relative"
         >
           {projects.map((p, index) => (
             <SwiperSlide key={p.id}>
-              <div className="relative group rounded-3xl overflow-hidden bg-gray-900 aspect-[9/16]">
+              <div className="relative group rounded-none sm:rounded-3xl overflow-hidden bg-gray-900 aspect-[9/16] w-full">
                 {/* ✅ ReactPlayer only renders on client */}
                 <ReactPlayer
                   url={getVideoUrl(p.video)}
@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
                   playing={playingIndex === index && autoplay}
                   muted={muted}
                   loop
-                  className="rounded-3xl"
+                  className="!rounded-lg"
                 />
 
                 {/* Play button overlay */}
@@ -75,7 +75,7 @@ const Projects: React.FC = () => {
                     onClick={() =>
                       setPlayingIndex(playingIndex === index ? null : index)
                     }
-                    className="bg-[#E12CEC] text-white px-2 py-1 rounded-full text-base font-medium transition"
+                    className="bg-[#E12CEC] text-white px-3 py-1.5 rounded-full text-base font-medium transition"
                   >
                     {playingIndex === index ? "⏸" : "▶"}
                   </button>

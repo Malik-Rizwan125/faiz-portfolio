@@ -39,7 +39,7 @@ export default function FAQ() {
           {/* Left Column */}
          
           <div>
-  <div className="inline-flex items-center gap-3 justify-center sm:justify-start mb-1">
+  <div className="flex items-center gap-3 justify-center sm:justify-start mb-1">
             <span className="w-2 h-2 rounded-full bg-[#E12CEC] inline-block" />
             <span className="text-sm text-gray-300">Faqs</span>
           </div>
