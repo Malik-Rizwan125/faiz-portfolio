@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { Heading } from "../Heading";
 
 const LandSwiper = () => {
   const landVideos = [
@@ -53,13 +54,14 @@ const LandSwiper = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <p className="text-[#E12CEC] text-sm font-medium mb-2">
-            ● Landscape Videos
-          </p>
-          <h2 className="text-3xl sm:text-5xl font-semibold mb-6">
-            Stunning Landscape <br /> Videos Collection
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <div className="flex justify-center mb-2.5">
+            <Heading variant="h5" heading={"● Landscape Videos"} />
+          </div>
+
+          <div className="flex justify-center mb-10">
+            <Heading heading={(<> Stunning Landscape <br /> Videos Collection</>)} />
+          </div>
+          <p className="text-white max-w-2xl mx-auto">
             Explore our collection of breathtaking landscape videos captured in
             stunning detail
           </p>

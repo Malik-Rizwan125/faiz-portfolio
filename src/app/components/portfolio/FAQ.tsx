@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import { Heading } from "../Heading";
+import Link from "next/link";
 
 export default function FAQ() {
   const items = [
@@ -34,26 +36,26 @@ export default function FAQ() {
 
   return (
     <section id="faqs" className="">
-      <div className="container !px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Column */}
-         
-          <div>
-  <div className="flex items-center gap-3 justify-center sm:justify-start mb-1">
-            <span className="w-2 h-2 rounded-full bg-[#E12CEC] inline-block" />
-            <span className="text-sm text-gray-300">Faqs</span>
-          </div>
-            <h2 className="text-3xl font-semibold mb-6 text-white text-center sm:text-start">
-              Frequently asked questions about us
-            </h2>
 
+          <div>
+            <div className="flex items-center gap-3 justify-start mb-3.5">
+              <Heading variant="h5" heading={"● Faqs"} />
+            </div>
+
+            <div className="flex justify-center mb-10">
+              <Heading heading={(<>Frequently asked questions about us</>)} />
+            </div>
             <div className="bg-[#E12CEC] rounded-2xl p-6 inline-block">
               <div className="text-white font-medium mb-3">
                 Have a question? Let's discuss it now!
               </div>
+              <Link href="https://calendly.com/m-faiz-ansari-220307/30min">
               <button className="bg-black text-white px-4 py-2 rounded-full">
                 Book an appointment
               </button>
+              </Link>
             </div>
           </div>
 
@@ -84,8 +86,8 @@ export default function FAQ() {
                 {/* Animated Answer */}
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === idx
-                      ? "max-h-40 opacity-100 mt-3 delay-200"
-                      : "max-h-0 opacity-0"
+                    ? "max-h-40 opacity-100 mt-3 delay-200"
+                    : "max-h-0 opacity-0"
                     }`}
                 >
                   <p className="text-sm text-gray-300">{it.a}</p>
@@ -94,7 +96,6 @@ export default function FAQ() {
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 }

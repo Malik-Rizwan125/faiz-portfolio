@@ -7,6 +7,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
+import { Heading } from "../Heading";
 
 // ✅ Dynamically import ReactPlayer only on client
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
@@ -35,11 +36,13 @@ const Projects: React.FC = () => {
   return (
     <section id="project" className="">
       <div className="max-w-7xl mx-auto text-center px-0 sm:px-6 lg:px-8">
-        <p className="text-[#E12CEC] text-sm mb-2">● Work</p>
-        <h2 className="text-3xl sm:text-5xl text-white font-semibold mb-12">
-          Explore our video editing <br /> work and projects
-        </h2>
+        <div className="flex justify-center mb-2.5">
+          <Heading variant="h5" heading={"● Work"} />
+        </div>
 
+        <div className="flex justify-center mb-10">
+          <Heading heading={(<>Explore our video editing <br /> work and projects</>)} />
+        </div>
         {/* Swiper Section */}
         <Swiper
           modules={[Navigation]}
@@ -58,7 +61,7 @@ const Projects: React.FC = () => {
           {projects.map((p, index) => (
             <SwiperSlide key={p.id}>
               <div className="relative group rounded-3xl overflow-hidden bg-gray-900 aspect-[9/16] w-full">
-                
+
                 <ReactPlayer
                   url={getVideoUrl(p.video)}
                   width="100%"

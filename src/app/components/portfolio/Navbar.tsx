@@ -34,16 +34,13 @@ useEffect(() => {
 
   return (
     <header
-      className={`fixed top-5 md:top-6 left-0 w-full z-50 flex justify-center transition-all duration-500 ${
-        isScrolled
-          ? "bg-[linear-gradient(rgba(28,28,28,0.8)_-38%,rgba(0,0,0,0.8)_156%)] backdrop-blur-md"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-5 md:top-6 left-0 z-50 w-full flex justify-center transition-all duration-500 
+      `}
     >
-      <div className="container flex justify-center">
+      <div className="flex justify-center w-full px-4 md:px-0">
         <nav
-          className={`relative flex items-center justify-between w-full max-w-5xl px-6 py-3 rounded-full border border-orange-500 bg-[linear-gradient(90deg,#181818_0%,#000_100%)] shadow-[0_0_15px_rgba(255,140,0,0.2)] transition-all duration-500 ${
-            isScrolled ? "scale-[0.98]" : "scale-100"
+          className={`relative flex items-center justify-between w-full md:w-[700px] px-5 py-3 rounded-full border border-orange-500 bg-[linear-gradient(90deg,#181818_0%,#000_100%)] shadow-[0_0_15px_rgba(255,140,0,0.2)] transition-all duration-500 ${
+            isScrolled ? "scale-[0.98] bg-[linear-gradient(rgba(28,28,28,0.8)_-38%,rgba(0,0,0,0.8)_156%)] backdrop-blur-md" : "scale-100 bg-transparent"
           }`}
         >
           {/* Brand */}

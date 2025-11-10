@@ -67,13 +67,7 @@ body {
   }
 }
 
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1580px;
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-}
+
 
 /* Navbar pill styles */
 .nav-pill {

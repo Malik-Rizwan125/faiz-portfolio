@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Heading } from "../Heading";
 
 export default function Testimonial() {
   const testimonials = [
@@ -116,8 +117,9 @@ export default function Testimonial() {
   return (
     <section id="testimonials">
       <div className="container mx-auto !px-0">
-        <h2 className="text-center text-3xl font-semibold mb-10 text-white">What Our Clients Say</h2>
-
+        <div className="flex justify-center mb-10">
+          <Heading heading={(<>What Our Clients Say</>)} />
+        </div>
         {/* Grid layout */}
         <div
           className="
