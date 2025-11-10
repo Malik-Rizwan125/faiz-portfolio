@@ -18,8 +18,8 @@ const Hero: React.FC = () => {
             <Heading variant="h5" heading={"● 3 Spots Available"} />
       </div>
       {/* Main heading */}
-      <div className="lg:w-[70%]">
-         <Heading variant="h5" heading={(<> Every Great Story <br />
+      <div className="lg:w-[70%] m-auto fflex justify-center mb-6">
+         <Heading  heading={(<> Every Great Story <br />
             Deserves a Great Editor.
           </>)} />
       </div>
