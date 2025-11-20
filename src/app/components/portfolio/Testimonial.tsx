@@ -62,14 +62,7 @@ const testimonials = [
     content: "Great communication and top-quality results.",
     rating: 5,
   },
-  {
-    id: 8,
-    name: "Hiroshi Tanaka",
-    role: "Project Manager (Japan)",
-    image: "https://i.ibb.co/6R74W4x/man-japan-01.jpg",
-    content: "Very professional experience — excellent work!",
-    rating: 5,
-  },
+
   {
     id: 9,
     name: "Hassan Raza",
@@ -128,14 +121,7 @@ const testimonials = [
     content: "Impressed with the attention to detail and quick delivery.",
     rating: 5,
   },
-  {
-    id: 16,
-    name: "Sofia Rossi",
-    role: "Brand Specialist (Italy)",
-    image: "https://i.ibb.co/N6JrRYx/woman-italy-01.jpg",
-    content: "Beautiful design work! Exactly what our brand needed.",
-    rating: 5,
-  },
+ 
   {
     id: 17,
     name: "Liam Walker",
@@ -144,14 +130,7 @@ const testimonials = [
     content: "Great communication and top-quality results.",
     rating: 5,
   },
-  {
-    id: 18,
-    name: "Hiroshi Tanaka",
-    role: "Project Manager (Japan)",
-    image: "https://i.ibb.co/6R74W4x/man-japan-01.jpg",
-    content: "Very professional experience — excellent work!",
-    rating: 5,
-  },
+
   {
     id: 19,
     name: "Maria Silva",
